@@ -1,0 +1,17 @@
+stages:
+  - build
+  - test
+
+build1:
+  stage: build
+  script:
+    - echo "Do your build here"
+
+test1:
+  stage: test
+  script:
+    - echo "Do a test here"
+    - echo "For example run a test suite"
+
+include:
+  - template: Jobs/SAST.gitlab-ci.yml
