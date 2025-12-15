@@ -1,0 +1,45 @@
+{
+    "Tay's": {
+        "name": "Tay's",
+        "users": [
+            {
+                "username": "Tay_Zaddy"
+            },
+            {
+                "username": "Tay"
+            },
+            {
+                "username": "Emma"
+            }
+        ],
+        "mood_entries": [
+            {
+                "username": "Tay_Zaddy",
+                "mood": "Neutral",
+                "note": "Life's a climb",
+                "date": "2025-12-15"
+            },
+            {
+                "username": "Tay",
+                "mood": "Low",
+                "note": "Please stop leaving dirty dishes in the sink",
+                "date": "2025-12-15"
+            },
+            {
+                "username": "Emma",
+                "mood": "Low",
+                "note": "Tired as hell!",
+                "date": "2025-12-15"
+            }
+        ]
+    },
+    "tge": {
+        "name": "tge",
+        "users": [
+            {
+                "username": "sdff"
+            }
+        ],
+        "mood_entries": []
+    }
+}

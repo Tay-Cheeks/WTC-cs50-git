@@ -1,112 +1,87 @@
-# Roomtone — CS50 Python Project (Planning Phase)
-
-Roomtone is a command-line based prototype for a future mental-wellbeing application designed for student residences, small homes, and support groups. This phase focuses entirely on Python, object-oriented programming, and clean architecture. The goal is to build a fully functional CLI prototype that can later evolve into a real application.
+Here’s a clean, professional README for your RoomTone project:
 
 ---
 
-## Project Purpose
+# RoomTone
 
-* Provide a simple mental-health daily check-in system.
-* Allow up to 6 users per "Home" to log moods, write notes, and track patterns.
-* Generate suggestions based on mood and note content.
-* Establish a foundation for future machine learning features.
+RoomTone is a command-line interface (CLI) tool for emotional check-ins in shared homes. It allows users to submit daily moods, view aggregated home vibes, and receive gentle suggestions to support overall emotional well-being.
 
----
+## Features
 
-## Core Architecture
+* Create or join a home with multiple users (up to 6 per home)
+* Submit daily mood check-ins (`Good`, `Neutral`, or `Low`)
+* Leave optional anonymous notes
+* View home-level aggregated mood and suggestions
+* View individual user mood suggestions
+* Persistent local storage of homes, users, and mood entries
 
-This is a pure Python application. All logic is implemented through clear OOP design.
+## Installation
 
-Directory layout:
+1. Clone the repository:
 
-```
-roomtone/
-│── main.py              # Entry point for the command-line interface
-│── models.py            # User, Home, Note, MoodEntry classes
-│── engine.py            # Core logic for check-in flow and interactions
-│── storage.py           # JSON-based save/load functionality
-│── util_text.py         # Text processing helpers
-│── util_stats.py        # Mood statistics and trend helpers
-│── suggestion_engine.py # Rule-based suggestion system
-│── README.md
+```bash
+git clone <repository-url>
 ```
 
----
+2. Navigate to the project directory:
 
-## File and Module Overview
-
-### main.py
-
-* Command-line interface
-* Menus, prompts, and navigation
-* User selects a home, logs in, records mood, and views summaries
-
-### models.py
-
-* `User`: name, mood history, notes
-* `Home`: container for up to 6 users and shared data
-* `MoodEntry`: mood rating, tags, timestamp
-* `Note`: reflective text entry
-
-### engine.py
-
-* Houses the application flow and interactions
-* Creates homes and registers users
-* Guides the daily flow: log mood → write note → view suggestion
-
-### storage.py
-
-* Handles persistent storage using JSON
-* Can be replaced with a database later
-
-### util_text.py
-
-* Text cleaning
-* Keyword extraction
-* Basic sentiment scoring (non-ML)
-
-### util_stats.py
-
-* Weekly averages
-* Trend detection
-* Tracking streaks and improvement metrics
-
-### suggestion_engine.py
-
-* Generates suggestions based on mood and text signals
-* Rule-based for now but structured for future ML integration
-
----
-
-## Future ML Integration (Not Part of CS50 Phase)
-
-The system is designed so that machine learning can later be added for:
-
-* Better suggestions
-* Semantic similarity searches
-* Pattern detection across notes
-
-The CS50 version, however, contains no ML.
-
----
-
-## How to Run
-
-```
-python3 main.py
+```bash
+cd roomtone
 ```
 
-The CLI guides you through creating a home, adding users, logging moods, writing notes, and viewing summaries.
+3. Ensure Python 3.9+ is installed. No external packages are required.
+
+## Usage
+
+Run the CLI tool:
+
+```bash
+python project.py
+```
+
+### Main Flow
+
+1. **Home Management**
+
+   * Create a new home or join an existing home.
+2. **User Login**
+
+   * Enter a username to log in or create a new user.
+3. **Main Menu**
+
+   * Submit Mood: Enter your mood for the day and optionally leave a note.
+   * View Home Vibe Summary: See the aggregated home mood, home-level suggestion, individual suggestions, and anonymous notes.
+   * Switch/Add User: Log in as a different user or add a new user.
+   * Exit: Save all data and exit the application.
+
+### Mood Options
+
+* Good
+* Neutral
+* Low
+
+## Data Storage
+
+RoomTone stores all data in a local JSON file (`roomtone_data.json`).
+This includes homes, users, daily moods, and anonymous notes.
+
+## File Structure
+
+* `project.py`: CLI entry point, handles menus and user interactions.
+* `models.py`: Core object-oriented structure for `Home`, `User`, and `MoodEntry`.
+* `storage.py`: Handles saving and loading data to/from JSON.
+* `engine.py`: Provides gentle suggestions for home and individual moods.
+
+## Contributing
+
+Contributions are welcome. Suggestions include:
+
+* Adding persistent user authentication
+* Enhancing mood suggestions with AI/ML
+* Adding reports or mood history visualization
+
+## License
+
+This project is open source and available under the MIT License.
 
 ---
-
-## Project Status
-
-Phase 1 (CS50 Python CLI): In progress
-
-Next steps:
-
-1. Generate basic scaffolding files
-2. Write class definitions
-3. Build CLI workflows
-4. Test with sample data
