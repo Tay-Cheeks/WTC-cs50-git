@@ -1,87 +1,85 @@
-Here’s a clean, professional README for your RoomTone project:
-
----
-
 # RoomTone
 
-RoomTone is a command-line interface (CLI) tool for emotional check-ins in shared homes. It allows users to submit daily moods, view aggregated home vibes, and receive gentle suggestions to support overall emotional well-being.
+#### Video Demo: `<INSERT_YOUR_VIDEO_URL_HERE>`
+
+#### Description:
+
+RoomTone is a Python-based command-line tool designed to help people living in shared homes check in on their moods and track the overall emotional vibe of their household. It allows multiple users to submit their daily mood, leave anonymous notes, and receive gentle suggestions based on the aggregated home mood. The project demonstrates concepts in Python including object-oriented programming, file I/O, exception handling, and unit testing with `pytest`.
+
+---
 
 ## Features
 
-* Create or join a home with multiple users (up to 6 per home)
-* Submit daily mood check-ins (`Good`, `Neutral`, or `Low`)
-* Leave optional anonymous notes
-* View home-level aggregated mood and suggestions
-* View individual user mood suggestions
-* Persistent local storage of homes, users, and mood entries
+* **Home Management:** Create or join a home and manage multiple users (up to six per home).
+* **Mood Tracking:** Each user can submit a daily mood (`Good`, `Neutral`, or `Low`) along with optional anonymous notes.
+* **Home Vibe Summary:** Aggregates all user moods to display the overall “vibe” of the home.
+* **Suggestions:** Provides thoughtful suggestions for the home or individual users based on moods.
+* **Persistent Storage:** All home data, users, and mood entries are saved locally in JSON format to maintain continuity across sessions.
+* **Edge Case Handling:** Prevents duplicate users in a home and limits the number of users per home.
+* **Test Coverage:** Core functions are tested using `pytest` for reliability and correctness.
 
-## Installation
-
-1. Clone the repository:
-
-```bash
-git clone <repository-url>
-```
-
-2. Navigate to the project directory:
-
-```bash
-cd roomtone
-```
-
-3. Ensure Python 3.9+ is installed. No external packages are required.
-
-## Usage
-
-Run the CLI tool:
-
-```bash
-python project.py
-```
-
-### Main Flow
-
-1. **Home Management**
-
-   * Create a new home or join an existing home.
-2. **User Login**
-
-   * Enter a username to log in or create a new user.
-3. **Main Menu**
-
-   * Submit Mood: Enter your mood for the day and optionally leave a note.
-   * View Home Vibe Summary: See the aggregated home mood, home-level suggestion, individual suggestions, and anonymous notes.
-   * Switch/Add User: Log in as a different user or add a new user.
-   * Exit: Save all data and exit the application.
-
-### Mood Options
-
-* Good
-* Neutral
-* Low
-
-## Data Storage
-
-RoomTone stores all data in a local JSON file (`roomtone_data.json`).
-This includes homes, users, daily moods, and anonymous notes.
+---
 
 ## File Structure
 
-* `project.py`: CLI entry point, handles menus and user interactions.
-* `models.py`: Core object-oriented structure for `Home`, `User`, and `MoodEntry`.
-* `storage.py`: Handles saving and loading data to/from JSON.
-* `engine.py`: Provides gentle suggestions for home and individual moods.
-
-## Contributing
-
-Contributions are welcome. Suggestions include:
-
-* Adding persistent user authentication
-* Enhancing mood suggestions with AI/ML
-* Adding reports or mood history visualization
-
-## License
-
-This project is open source and available under the MIT License.
+```
+roomtone/
+│
+├── project.py               # Main program entry point (contains main function and CLI flows)
+├── models.py                # Defines Home, User, MoodEntry classes
+├── engine.py                # SuggestionEngine class for mood-based suggestions
+├── storage.py               # Persistent storage using JSON
+├── test_project.py          # Pytest test suite for main functions and edge cases
+├── requirements.txt 
+├── tk_ui.py                 # Python dependencies (standard library only)
+└── README.md                # Project documentation
+```
 
 ---
+
+## How It Works
+
+1. **Start the Program:** The user launches `project.py`.
+2. **Home Flow:** The program lists existing homes. Users can join an existing home or create a new one.
+3. **User Login:** Users can log in with a username or create a new user in the home.
+4. **Submit Mood:** Users submit their daily mood and optional anonymous notes.
+5. **View Home Vibe:** Users can view a summary of the home’s overall vibe along with any suggestions and notes.
+6. **Switch Users:** Multiple users can check in sequentially.
+7. **Exit:** All data is saved automatically to `roomtone_data.json`.
+
+---
+
+## Testing
+
+RoomTone includes unit tests using `pytest` to ensure correctness and edge case handling. Examples include:
+
+* `test_view_home_vibe()` – verifies mood aggregation and suggestions.
+* `test_home_full()` – ensures no more than six users can be added to a home.
+* `test_duplicate_user()` – prevents adding the same username twice.
+
+To run tests:
+
+```bash
+pytest test_project.py
+```
+
+---
+
+## Design Decisions
+
+* **CLI Interface:** Chosen for simplicity and to meet project requirements.
+* **JSON Storage:** Ensures data persistence without external databases.
+* **Suggestion Engine:** Currently rule-based; can be extended with ML models in future iterations.
+* **Edge Case Handling:** Designed to prevent user duplication and handle empty mood submissions gracefully.
+
+---
+
+#### Author
+
+* **Name:** `Thando Majola`
+* **GitHub Username:** `https://gitlab.com/Tay-Cheeks/cs50-roomtone`
+* **edX Username:** `Thando971012`
+* **City/Country:** `Johannesburg, South Africa`
+* **Date:** `15 December 2025`
+
+

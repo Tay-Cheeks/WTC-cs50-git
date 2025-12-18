@@ -19,6 +19,7 @@ from models import Home, User
 from storage import Storage
 from engine import SuggestionEngine
 from datetime import date
+from tk_ui import launch_app #tkinter
 
 
 def user_login(home):
@@ -86,6 +87,8 @@ def view_home_vibe(home):
         print("\nNo notes submitted today.")
 
 def main():
+    launch_app()
+
     print("🌿 Welcome to RoomTone!")
 
     # Step 1: List homes

@@ -10,6 +10,9 @@
             },
             {
                 "username": "Emma"
+            },
+            {
+                "username": "zaza"
             }
         ],
         "mood_entries": [
@@ -30,6 +33,12 @@
                 "mood": "Low",
                 "note": "Tired as hell!",
                 "date": "2025-12-15"
+            },
+            {
+                "username": "zaza",
+                "mood": "Good",
+                "note": null,
+                "date": "2025-12-16"
             }
         ]
     },
@@ -41,5 +50,65 @@
             }
         ],
         "mood_entries": []
+    },
+    "TestHome": {
+        "name": "TestHome",
+        "users": [
+            {
+                "username": "Charlie"
+            },
+            {
+                "username": "ZAZA"
+            }
+        ],
+        "mood_entries": [
+            {
+                "username": "Charlie",
+                "mood": "Good",
+                "note": "Feeling great",
+                "date": "2025-12-15"
+            },
+            {
+                "username": "ZAZA",
+                "mood": "Neutral",
+                "note": "YEEEAH BABY",
+                "date": "2025-12-16"
+            }
+        ]
+    },
+    "Tay's House": {
+        "name": "Tay's House",
+        "users": [
+            {
+                "username": "Tay"
+            },
+            {
+                "username": "Tay_Zaddy"
+            }
+        ],
+        "mood_entries": [
+            {
+                "username": "Tay_Zaddy",
+                "mood": "Neutral",
+                "note": "bs",
+                "date": "2025-12-16"
+            }
+        ]
+    },
+    "House of Emma": {
+        "name": "House of Emma",
+        "users": [
+            {
+                "username": "EmmaOfHouse"
+            }
+        ],
+        "mood_entries": [
+            {
+                "username": "EmmaOfHouse",
+                "mood": "Low",
+                "note": "Shit, I ain't Ok. It's like yeah...I do wanna be alone cause of depression and stuff but at the same time,I cannot be alone at all. I just need some rescuing...",
+                "date": "2025-12-17"
+            }
+        ]
     }
 }

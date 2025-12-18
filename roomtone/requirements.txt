@@ -1,0 +1,2 @@
+tkinter for ui
+pytest for tests
